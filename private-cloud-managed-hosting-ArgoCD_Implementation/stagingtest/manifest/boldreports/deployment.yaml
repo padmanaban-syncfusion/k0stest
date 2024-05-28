@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: id-web
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -62,7 +62,7 @@ spec:
   selector:
     matchLabels:
       app: id-api
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -121,7 +121,7 @@ spec:
   selector:
     matchLabels:
       app: id-ums
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -192,7 +192,7 @@ spec:
   selector:
     matchLabels:
       app: reports-web
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -247,7 +247,7 @@ spec:
   selector:
     matchLabels:
       app: reports-api
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -299,7 +299,7 @@ spec:
   selector:
     matchLabels:
       app: reports-jobs
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -354,7 +354,7 @@ spec:
   selector:
     matchLabels:
       app: reports-reportservice
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -409,7 +409,7 @@ spec:
   selector:
     matchLabels:
       app: reports-viewer
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
