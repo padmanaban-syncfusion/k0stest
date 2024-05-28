@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+#namespace: bold-services
+
+resources:
+  - manifest
+images:
+  - name: gcr.io/boldreports/bold-identity
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/bold-idp-api
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/boldreports-server
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/boldreports-server-api
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/boldreports-server-jobs
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/boldreports-designer
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/boldreports-viewer
+    newTag: 5.4.30
+  - name: gcr.io/boldreports/bold-ums
+    newTag: 5.4.30
+
+ 

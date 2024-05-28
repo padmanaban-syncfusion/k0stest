@@ -1,0 +1,42 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: aws-s3-sc
+  namespace: default
+provisioner: s3.csi.aws.com
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bold-fileserver
+  namespace: bold-services
+spec:
+  capacity:
+    storage: 50Gi # ignored, required
+  accessModes:
+    - ReadWriteMany # supported options: ReadWriteMany / ReadOnlyMany
+  mountOptions:
+    - allow-delete
+    - region us-east-2
+  csi:
+    driver: s3.csi.aws.com # required
+    volumeHandle: s3-csi-driver-volume
+    volumeAttributes:
+      bucketName: <bucket-name>
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bold-fileserver-claim
+  namespace: bold-services
+spec:
+  accessModes:
+    - ReadWriteMany # supported options: ReadWriteMany / ReadOnlyMany
+  storageClassName: "aws-s3-sc" # required for static provisioning
+  resources:
+    requests:
+      storage: 50Gi # ignored, required
+  volumeName: bold-fileserver
+
