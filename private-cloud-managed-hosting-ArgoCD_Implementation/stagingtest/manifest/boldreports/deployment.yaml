@@ -213,10 +213,10 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: 100m
-            memory: 750Mi
+            cpu: 900m
+            memory: 950Mi
           limits:
-            cpu: 500m
+            cpu: 900m
             memory: 2Gi
         readinessProbe:
           httpGet:
@@ -268,8 +268,8 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: 100m
-            memory: 750Mi
+            cpu: 900m
+            memory: 950Mi
         readinessProbe:
           httpGet:
             path: /health-check
@@ -375,10 +375,10 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: 100m
-            memory: 750Mi
+            cpu: 900m
+            memory: 950Mi
           limits:
-            cpu: 1000m
+            cpu: 1900m
             memory: 2Gi
         readinessProbe:
           httpGet:
